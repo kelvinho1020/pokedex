@@ -1,0 +1,146 @@
+.preview {
+	overflow: hidden;
+	display: flex;
+	
+	&__link {
+		&:link,
+		&:visited {
+			flex: 1;
+			display: flex;
+			align-items: center;
+			padding: 1.5rem 3.25rem;
+			transition: all .2s;
+			border-right: 1px solid #fff;
+			text-decoration: none;
+			background-color: #fff;
+		}
+
+		&:hover {
+			background-color: $color-grey-light-1;
+			transform: translateY(-2px);
+		}
+
+		&--active {
+			background-color: $color-grey-light-1;
+		}
+	}
+
+	&__fig {
+		flex: 0 0 5.8rem;
+		border-radius: 50%;
+		overflow: hidden;
+		height: 5.8rem;
+		margin-right: 2rem;
+		position: relative;
+		backface-visibility: hidden;
+
+		&::before {
+			content: "";
+			display: block;
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-image: url(../img/pokeball_bg.png),
+				linear-gradient(to right bottom, $color-grad-1, $color-grad-2);
+			background-size: 100%;
+			opacity: 0.2;
+		}
+
+		img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			transition: all .2s;
+		}
+	}
+
+	&__data {
+		display: grid;
+		width: 100%;
+		grid-template-columns: 1fr 2rem;
+		row-gap: 0.1rem;
+		align-items: center;
+	}
+
+	&__name {
+		grid-column: 1/-1;
+		font-size: 1.45rem;
+		color: $color-primary;
+		text-transform: uppercase;
+		font-weight: 600;
+		margin-bottom: 0.3rem;
+
+		// This is how text is truncated!
+		text-overflow: ellipsis;
+		max-width: 25rem;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+
+	&__type {
+		font-size: 1.15rem;
+		color: $color-grey-dark-2;
+		text-transform: uppercase;
+		font-weight: 600;
+		display: flex;
+
+		&--1 {
+			color: white;
+			width: 6rem;
+			border-radius: 20px;
+			text-align: center;
+		}
+
+		&--2 {
+			color: white;
+			width: 6rem;
+			border-radius: 20px;
+			text-align: center;
+			margin-left: 1rem;
+		}
+	}
+
+	&__user-bookmark {
+		background-color: darken($color-grey-light-2, 2%);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 2rem;
+		width: 2rem;
+		border-radius: 10rem;
+
+		margin-left: auto;
+		margin-right: 1.75rem;
+
+		svg {
+			height: 1.2rem;
+			width: 1.2rem;
+			fill: $color-primary;
+		}
+	}
+
+	&__user-delete {
+		background-color: darken($color-grey-light-2, 2%);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 4rem;
+		width: 4rem;
+		border-radius: 10rem;
+		margin-right: 3rem;
+		right: 0%;
+		align-self: center;
+		position: absolute;
+		z-index: 100;
+		cursor: pointer;
+
+		svg {
+			height: 1.2rem;
+			width: 1.2rem;
+			fill: $color-primary;
+		}
+	}
+}

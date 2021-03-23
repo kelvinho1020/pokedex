@@ -1,0 +1,17 @@
+{
+	"name": "pokedex",
+	"version": "1.0.0",
+	"description": "simple pokedex",
+	"default": "index.html",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"compile:sass": "node-sass src/sass/main.scss src/css/style.css -w"
+	},
+	"author": "Kelvin Ho",
+	"license": "ISC",
+	"devDependencies": {
+		"node-sass": "^5.0.0"
+	},
+	"dependencies": {}
+}

@@ -1,0 +1,173 @@
+:root {
+	/// pokemon ///
+	--normal: #babaae;
+	--fighting: #a75543;
+	--flying: #78a2ff;
+	--poison: #a95ca0;
+	--ground: #eecc55;
+	--rock: #ccbd72;
+	--bug: #c2d21e;
+	--ghost: #7975d7;
+	--steel: #c4c2db;
+	--fire: #fa5643;
+	--water: #56adff;
+	--grass: #8cd750;
+	--electric: #fde139;
+	--psychic: #a5009d;
+	--ice: #96f1ff;
+	--dragon: #8673ff;
+	--dark: #6b0000;
+	--fairy: #f9aeff;
+}
+
+.normal {
+	background: #babaae;
+}
+
+.fighting {
+	background: #a75543;
+}
+
+.flying {
+	background: #78a2ff;
+}
+
+.poison {
+	background: #a95ca0;
+}
+
+.ground {
+	background: #eecc55;
+}
+
+.rock {
+	background: #ccbd72;
+}
+
+.bug {
+	background: #c2d21e;
+}
+
+.ghost {
+	background: #7975d7;
+}
+
+.steel {
+	background: #c4c2db;
+}
+
+.fire {
+	background: #fa5643;
+}
+
+.water {
+	background: #56adff;
+}
+
+.grass {
+	background: #8cd750;
+}
+
+.electric {
+	background: #fde139;
+}
+
+.psychic {
+	background: #a5009d;
+}
+
+.ice {
+	background: #96f1ff;
+}
+
+.dragon {
+	background: #8673ff;
+}
+
+.dark {
+	background: #6b0000;
+}
+
+.fairy {
+	background: #f9aeff;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 62.5%;
+
+	@media only screen and (max-width: $bp-medium) {
+		font-size: 50%;
+	}
+}
+
+body {
+	font-family: "Ubuntu", sans-serif;
+	font-weight: 400;
+	line-height: 1.6;
+	color: $color-grey-dark-1;
+	background-image: $gradient;
+	background-size: cover;
+	background-repeat: no-repeat;
+	min-height: calc(100vh - 2 * 4vw);
+}
+
+.container {
+	max-width: 120rem;
+	min-height: 117rem;
+	margin: 4vw auto;
+	background-color: #fff;
+	border-radius: 9px;
+	overflow: hidden;
+	box-shadow: 0 2rem 6rem 0.5rem rgba($color-grey-dark-1, 0.2);
+
+	display: grid;
+	grid-template-rows: 10rem minmax(100rem, auto);
+	grid-template-columns: 1fr 2fr;
+	grid-template-areas:
+		"head head"
+		"list recipe";
+
+	@media only screen and (max-width: $bp-large) {
+		max-width: 100%;
+		margin: 0;
+		border-radius: 0;
+	}
+}
+
+table {
+	font-size: 1.3rem;
+	width: 100%;
+	padding: 3rem 0;
+	border-top: 1px solid #cfd5dc;
+	border-bottom: 1px solid #cfd5dc;
+
+	tbody {
+		display: table-row-group;
+		vertical-align: middle;
+		border-color: inherit;
+	}
+
+	tr {
+		display: table-row;
+		vertical-align: inherit;
+		border-color: inherit;
+	}
+
+	td {
+		text-align: center;
+		padding: 0.3rem 0.3rem;
+	}
+}
+
