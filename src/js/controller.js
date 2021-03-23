@@ -67,7 +67,7 @@ const init = function () {
 	bookmarksView.addHandlerDeleteBookmark(controlPreviewDeleteBookMark);
 	searchView.addHandlerSeach(controlSearchPokemon);
 	paginationView.addHandlerClick(controlPagination);
-	console.log('Fuck git')
+	console.log("This is new feature");
 };
 
 init();
