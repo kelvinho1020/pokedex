@@ -55,7 +55,7 @@ const controlToggleBookmark = function () {
 };
 
 const controlPreviewDeleteBookMark = function (id) {
-	bookmarksView.render(model.getdeleteId(id));
+	bookmarksView.render(model.deleteBookmark(id));
 	pokemonView.renderPokemon(model.state);
 };
 

@@ -112,12 +112,6 @@ export const deleteBookmark = function (id) {
 	const index = state.bookmarks.findIndex(el => el.id === id);
 	state.bookmarks.splice(index, 1);
 	if (id === state.pokemon.id) state.pokemon.bookmarked = false;
-};
-
-export const getdeleteId = function (id) {
-	const index = state.bookmarks.findIndex(el => el.id === id);
-	state.bookmarks.splice(index, 1);
-	if (id === state.pokemon.id) state.pokemon.bookmarked = false;
 
 	return state.bookmarks;
 };
