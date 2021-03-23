@@ -21,9 +21,11 @@
   &__btn {
     &--prev {
       float: left;
+      background-color: $color-grey-light-2;
     }
     &--next {
       float: right;
+      background-color: $color-grey-light-2;
     }
   }
 }

@@ -532,9 +532,11 @@ table {
     display: table;
     clear: both; }
   .pagination__btn--prev {
-    float: left; }
+    float: left;
+    background-color: #f2efee; }
   .pagination__btn--next {
-    float: right; }
+    float: right;
+    background-color: #f2efee; }
 
 .pokemon {
   background-color: #f9f5f3; }
