@@ -1,3 +1,4 @@
+import loadingGIF from '../../img/loading.gif'
 export default class View {
 	_data;
 
@@ -31,7 +32,7 @@ export default class View {
 	renderLoading() {
 		const markup = `
         <div class="loading">
-            <img src="./src/img/loading.gif" alt="this slowpoke moves" alt="loading image"/>
+            <img src="${loadingGIF}" alt="this slowpoke moves" alt="loading image"/>
         </div>
     `;
 		this._clear();

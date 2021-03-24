@@ -67,7 +67,6 @@ const init = function () {
 	bookmarksView.addHandlerDeleteBookmark(controlPreviewDeleteBookMark);
 	searchView.addHandlerSeach(controlSearchPokemon);
 	paginationView.addHandlerClick(controlPagination);
-	console.log("This is new feature");
 };
 
 init();

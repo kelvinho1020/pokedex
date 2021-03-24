@@ -1,4 +1,6 @@
 import View from "./View.js";
+import icons from "../../img/icons.svg";
+import pokeball from "../../img/pokeball_bg.png";
 
 class ResultsView extends View {
 	_parentElement = document.querySelector(".results");
@@ -11,7 +13,7 @@ class ResultsView extends View {
             <li class="preview">
                 <a class="preview__link preview__link--active" href="#${data.id}">
                     <figure class="preview__fig">
-                        <img src="${data.icon ? data.icon : "./src/img/pokeball_bg.png"}" alt="Test" />
+                        <img src="${data.icon ? data.icon : pokeball}" alt="Test" />
                     </figure>
                     <div class="preview__data">
                         <h4 class="preview__name">${data.name}</h4>
@@ -21,7 +23,7 @@ class ResultsView extends View {
                         </div>
                             <div class="preview__user-bookmark">
                             <svg>
-                                <use href="src/img/sprite.svg#icon-heart-outlined"></use>
+                                <use href="${icons}#icon-heart-outlined"></use>
                             </svg>
                         </div>
                     </div>

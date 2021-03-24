@@ -1,4 +1,6 @@
 import View from "./View.js";
+import icons from "../../img/icons.svg";
+import pokeball from "../../img/pokeball_bg.png";
 
 class BookmarksView extends View {
 	_parentElement = document.querySelector(".bookmarks__list");
@@ -20,7 +22,7 @@ class BookmarksView extends View {
             <li class="preview">
                 <a class="preview__link preview__link--active" href="#${data.id}">
                     <figure class="preview__fig">
-                        <img src="${data.icon ? data.icon : "./src/img/pokeball_bg.png"}" alt="Test" />
+                        <img src="${data.icon ? data.icon : pokeball}" alt="Test" />
                     </figure>
                     <div class="preview__data">
                         <h4 class="preview__name">${data.name}</h4>
@@ -32,7 +34,7 @@ class BookmarksView extends View {
                 </a>
                 <div class="preview__user-delete" data-ID="${data.id}">
                     <svg>
-                        <use href="src/img/sprite.svg#icon-trash"></use>
+                        <use href="${icons}#icon-trash"></use>
                     </svg>
                 </div>
             </li>`

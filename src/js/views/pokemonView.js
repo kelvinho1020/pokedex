@@ -1,5 +1,6 @@
 import View from "./View.js";
 import { calAllStats, getNatureValue } from "../calculator.js";
+import icons from "../../img/icons.svg";
 
 class PokemonView extends View {
 	_parentElement = document.querySelector(".pokemon");
@@ -116,7 +117,7 @@ class PokemonView extends View {
 		<div class="switch__btn">
 			<a class="btn--inline switch__btn__next" href="#${this._data.pokemon.id + 1}">
 			<svg class="search__icon">
-				<use href="src/img/icons.svg#icon-arrow-right"></use>
+				<use href="${icons}#icon-arrow-right"></use>
 			</svg>
 			</a>
 		</div>`}
@@ -124,12 +125,12 @@ class PokemonView extends View {
 		<div class="switch__btn">
 			<a class="btn--inline switch__btn__prev" href="#${this._data.pokemon.id - 1}">
 				<svg class="search__icon">
-					<use href="src/img/icons.svg#icon-arrow-left"></use>
+					<use href="${icons}#icon-arrow-left"></use>
 				</svg>
 			</a>
 			<a class="btn--inline switch__btn__next" href="#${this._data.pokemon.id + 1}">
 				<svg class="search__icon">
-					<use href="src/img/icons.svg#icon-arrow-right"></use>
+					<use href="${icons}#icon-arrow-right"></use>
 				</svg>
 			</a>
 		</div>`
@@ -140,7 +141,7 @@ class PokemonView extends View {
 		return`
         <figure class="pokemon__fig">
             <svg class='icon--heart'>
-                <use xlink:href="src/img/sprite.svg#icon-heart${this._data.pokemon.bookmarked ? "" : '-outlined'}"></use>
+                <use xlink:href="${icons}#icon-heart${this._data.pokemon.bookmarked ? "" : '-outlined'}"></use>
             </svg>` 
 		+ this._generateButtonMarkup() + 
            `<img src="${this._data.pokemon.sprites ? this._data.pokemon.sprites:'./src/img/pokeball_bg.png'}" alt="Pokemon" class="pokemon__img" />
