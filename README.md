@@ -5,10 +5,6 @@ This Pokedex is a small demo application based on MVC architecture.<br>
 </p>
 
 ## DEMO
-<<<<<<< HEAD
-
-=======
->>>>>>> a675f30219d7c1dbd630ccb7baa89513a41a5f34
 https://pokedex-kelvinho.netlify.app
 
 ## Open API
@@ -19,9 +15,5 @@ Pokedex using the [PokeAPI](https://pokeapi.co/) for constructing RESTful API.<b
 PokeAPI provides a RESTful API interface to highly detailed objects built from thousands of lines of data related to Pokémon.
 
 ## Architecture
-<<<<<<< HEAD
-
-=======
->>>>>>> a675f30219d7c1dbd630ccb7baa89513a41a5f34
 Pokedex is based on MVVM architecture and a repository pattern.
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/MVC-Process.svg/1200px-MVC-Process.svg.png" align="right" width="21%">
