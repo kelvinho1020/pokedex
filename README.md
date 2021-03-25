@@ -1,11 +1,19 @@
 <h1 align="center">Pokedex</h1>
 
 <p align="center">
-This Pokedex is a small demo application based on MVC architecture.<br>
+Pokedex is a small demo application built by JavaScript<br>
 </p>
 
 ## DEMO
 https://pokedex-kelvinho.netlify.app
+
+## Searching
+![screenshoot2](https://user-images.githubusercontent.com/15214136/112500569-75d58a00-8dc3-11eb-8914-7d39dc03c28c.PNG  align="center" width="50%")
+Searching pokemon by pokemon's name or ID
+
+## Pokemon-stat-calculator
+![screenshoot3](https://user-images.githubusercontent.com/15214136/112500577-7706b700-8dc3-11eb-826a-1817a76a2bbd.PNG  align="center" width="50%")
+Calculate pokemon stat by IV, EV, nature and level
 
 ## Open API
 
