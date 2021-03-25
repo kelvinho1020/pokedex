@@ -5,7 +5,7 @@ Pokedex is a small demo application built by JavaScript<br>
 </p>
 
 ## DEMO
-https://pokedex-kelvinho.netlify.app
+https://pokedex-kelvinho.netlify.app <br>
 <img src="https://user-images.githubusercontent.com/15214136/112501973-a5d15d00-8dc4-11eb-8c72-0651d2051adc.png" align="center" width="50%"><br>
 
 ## Searching
