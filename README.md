@@ -15,5 +15,5 @@ Pokedex using the [PokeAPI](https://pokeapi.co/) for constructing RESTful API.<b
 PokeAPI provides a RESTful API interface to highly detailed objects built from thousands of lines of data related to Pokémon.
 
 ## Architecture
-Pokedex is based on MVVM architecture and a repository pattern.
+Pokedex is based on MVC architecture.
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/MVC-Process.svg/1200px-MVC-Process.svg.png" align="right" width="21%">
