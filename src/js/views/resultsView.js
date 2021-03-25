@@ -1,5 +1,4 @@
 import View from "./View.js";
-import icons from "../../img/icons.svg";
 import pokeball from "../../img/pokeball_bg.png";
 
 class ResultsView extends View {
@@ -7,6 +6,7 @@ class ResultsView extends View {
 	_errorMessage = `We can't find that Pokemon! Please try other's name or ID!`;
 
 	_generateMarkup() {
+        console.log(this._data)
 		// prettier-ignore
 		return this._data
 			.map( data => `
@@ -20,11 +20,6 @@ class ResultsView extends View {
                         <div class="preview__type">
                             <p class="preview__type--1 ${data.type1}">${data.type1}</p>
                             <p class="preview__type--2  ${data.type2 ? data.type2 : "hidden"}">${data.type2}</p>
-                        </div>
-                            <div class="preview__user-bookmark">
-                            <svg>
-                                <use href="${icons}#icon-heart-outlined"></use>
-                            </svg>
                         </div>
                     </div>
                 </a>

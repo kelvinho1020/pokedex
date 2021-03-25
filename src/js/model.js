@@ -109,9 +109,15 @@ export const getSearchResultsPage = function (page = state.currentPage) {
 	return state.searchPokemon.slice(start, end);
 };
 
+const persistBookmarks = function () {
+	localStorage.setItem("bookmarks", JSON.stringify(state.bookmarks));
+};
+
 export const addBookmark = function (pokemon) {
 	state.bookmarks.push(pokemon);
 	if (pokemon.id === state.pokemon.id) state.pokemon.bookmarked = true;
+
+	persistBookmarks();
 };
 
 export const deleteBookmark = function (id) {
@@ -119,5 +125,14 @@ export const deleteBookmark = function (id) {
 	state.bookmarks.splice(index, 1);
 	if (id === state.pokemon.id) state.pokemon.bookmarked = false;
 
+	persistBookmarks();
+
 	return state.bookmarks;
 };
+
+const init = function () {
+	const storage = localStorage.getItem("bookmarks");
+	if (storage) state.bookmarks = JSON.parse(storage);
+};
+
+init();

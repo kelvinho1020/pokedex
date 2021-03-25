@@ -1,6 +1,7 @@
 import View from "./View.js";
 import { calAllStats, getNatureValue } from "../calculator.js";
 import icons from "../../img/icons.svg";
+import pokeball from "../../img/pokeball_bg.png";
 
 class PokemonView extends View {
 	_parentElement = document.querySelector(".pokemon");
@@ -160,7 +161,7 @@ class PokemonView extends View {
                 <use href="${icons}#icon-heart${this._data.pokemon.bookmarked ? "" : '-outlined'}"></use>
             </svg>` 
 		+ this._generateButtonMarkup() + 
-           `<img src="${this._data.pokemon.sprites ? this._data.pokemon.sprites:'./src/img/pokeball_bg.png'}" alt="Pokemon" class="pokemon__img" />
+           `<img src="${this._data.pokemon.sprites ? this._data.pokemon.sprites: pokeball}" alt="Pokemon" class="pokemon__img" />
             <h1 class="pokemon__name">
                 <span>#${this._data.pokemon.id >= 10000 ? '' : this._data.pokemon.id } ${this._data.pokemon.name}</span>
             </h1>
@@ -268,7 +269,7 @@ class PokemonView extends View {
 	}
 
 	_generateEffectiveness() {
-		const noWeakness = `<span class = "heading--3 type--none">No WEAKNESS</span>`;
+		const noWeakness = `<span class = "heading--3 type--none">No effectiveness</span>`;
 		const quadruple = this._quadruple
 			.map(type => `<span class="type" data-type="${type}">${type}</span>`)
 			.join("");
@@ -285,10 +286,10 @@ class PokemonView extends View {
 		// prettier-ignore
 		return `
 		<div class="pokemon__effectiveness">
-		<h2 class="heading--2">Weakness</h2>
+		<h2 class="heading--2">effectiveness</h2>
 		<div class="pokemon__effectiveness__row">
 			<h3 class="heading--3">4X</h3>
-			<div class="pokemon__effectiveness__types">` + (this._quadruple.length !==0 ? quadruple : noWeakness)+
+			<div class="pokemon__effectiveness__types">` + (this._quadruple.length !==0 ? quadruple : noWeakness) +
 			`</div>
 			<h3 class="heading--3">2X</h3>
 			<div class="pokemon__effectiveness__types">` + (this._double.length !==0 ? double : noWeakness) + 

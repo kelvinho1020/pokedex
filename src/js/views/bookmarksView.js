@@ -4,7 +4,7 @@ import pokeball from "../../img/pokeball_bg.png";
 
 class BookmarksView extends View {
 	_parentElement = document.querySelector(".bookmarks__list");
-	_errorMessage = `No bookmarks yet! Go and find your first Pokemon!`;
+	_errorMessage = `No bookmarks yet! Go and bookmark your first pokemon :)`;
 
 	addHandlerDeleteBookmark(handler) {
 		this._parentElement.addEventListener("click", function (e) {

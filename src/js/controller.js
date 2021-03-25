@@ -13,6 +13,7 @@ const controlPokemon = async function () {
 		await model.loadPokemon(id);
 
 		pokemonView.renderPokemon(model.state);
+		bookmarksView.render(model.state.bookmarks);
 	} catch (err) {
 		pokemonView.renderError();
 	}
@@ -61,6 +62,7 @@ const controlPreviewDeleteBookMark = function (id) {
 
 const init = function () {
 	window.addEventListener("load", model.loadAllPokemon);
+	window.addEventListener("load", bookmarksView.render(model.state.bookmarks));
 	pokemonView.addHandlerRender(controlPokemon);
 	pokemonView.addHandlerCalculator(controlCalculator);
 	pokemonView.addHandlerAddBookmark(controlToggleBookmark);
