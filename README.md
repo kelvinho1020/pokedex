@@ -1,12 +1,11 @@
 <h1 align="center">Pokedex</h1>
 
-# DEMO
-https://pokedex-kelvinho.netlify.app
-
-
 <p align="center">
 This Pokedex is a small demo application based on MVC architecture.<br>
 </p>
+
+# DEMO
+https://pokedex-kelvinho.netlify.app
 
 ## Open API
 
