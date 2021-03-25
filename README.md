@@ -9,11 +9,11 @@ https://pokedex-kelvinho.netlify.app
 
 ## Searching
 Searching pokemon by pokemon's name or ID
-<img src="https://user-images.githubusercontent.com/15214136/112500569-75d58a00-8dc3-11eb-8914-7d39dc03c28c.PNG"  align="right" width="21%">
+<img src="https://user-images.githubusercontent.com/15214136/112500569-75d58a00-8dc3-11eb-8914-7d39dc03c28c.PNG"  align="right" width="21%"><br>
 
 ## Pokemon-stat-calculator
 Calculate pokemon stat by IV, EV, nature and level
-<img src="https://user-images.githubusercontent.com/15214136/112500577-7706b700-8dc3-11eb-826a-1817a76a2bbd.PNG"  align="right" width="21%">
+<img src="https://user-images.githubusercontent.com/15214136/112500577-7706b700-8dc3-11eb-826a-1817a76a2bbd.PNG"  align="right" width="21%"><br>
 
 ## Open API
 <img src="https://user-images.githubusercontent.com/24237865/83422649-d1b1d980-a464-11ea-8c91-a24fdf89cd6b.png" align="right" width="21%"/>
