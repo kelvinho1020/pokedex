@@ -1,5 +1,6 @@
 import { API_URL, DATA_PER_PAGE } from "./config.js";
 import { getJSON } from "./helpers.js";
+import { getTypeWeaknesses, getTypeStrengths } from "poke-types";
 
 export const state = {
 	pokemon: {},
@@ -29,11 +30,16 @@ export const loadPokemon = async function (id) {
 			icon: data.sprites.versions["generation-viii"].icons.front_default,
 		};
 
+		///// Weakness & Strengths /////
+		state.pokemon.type = [state.pokemon.type1, state.pokemon.type2];
+		state.pokemon.weakness = getTypeWeaknesses(...state.pokemon.type);
+		state.pokemon.strengths = getTypeStrengths(...state.pokemon.type);
+
 		///// Hidden Ability /////
-		if (data.abilities[1] && data.abilities[1].is_hidden === true)
-			state.pokemon.hiddenAbility = data.abilities[1].ability.name;
-		else if (data.abilities[2]) state.pokemon.hiddenAbility = data.abilities[2].ability.name;
-		else state.pokemon.hiddenAbility = null;
+		data.abilities.forEach(ability => {
+			if (ability.is_hidden === true) state.pokemon.hiddenAbility = ability.ability.name;
+			if (ability.is_hidden === false) state.pokemon.hiddenAbility = `no hidden ability`;
+		});
 
 		///// OverAll Status Calculate /////
 		state.pokemon.overall = state.pokemon.stats.reduce((acc, cur) => {
@@ -50,8 +56,8 @@ export const loadPokemon = async function (id) {
 		if (state.bookmarks.some(bookmark => bookmark.id === id)) state.pokemon.bookmarked = true;
 		else state.pokemon.bookmarked = false;
 
-		// console.log(state.pokemon);
-		console.log(data);
+		console.log(state.pokemon);
+		//console.log(data);
 	} catch (err) {
 		throw err;
 	}

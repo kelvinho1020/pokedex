@@ -13,27 +13,41 @@ class PokemonView extends View {
 	_nature = [1, 1, 1, 1, 1];
 	_allStats = [];
 	_natureDefault = "Hardy";
+	_quadruple = [];
+	_double = [];
+	_half = [];
+	_quarter = [];
 
 	_resetStats() {
 		this._IVs = [31, 31, 31, 31, 31, 31];
 		this._EVs = [0, 0, 0, 0, 0, 0];
 		this._LV = +50;
-		// this._baseStats = [];
 		this._nature = [1, 1, 1, 1, 1];
 		this._allStats = [];
 		this._natureDefault = "Hardy";
+		this._quadruple = [];
+		this._double = [];
+		this._half = [];
+		this._quarter = [];
 	}
 
 	_styleChange() {
 		const background = document.querySelector(".pokemon__fig");
-		const typeColor1 = document.querySelector(".pokemon__details__type--1");
-		const typeColor2 = document.querySelector(".pokemon__details__type--2");
-		// prettier-ignore
+		const typeColor = document.querySelectorAll(".type");
+
+		typeColor.forEach(type => (type.style.backgroundColor = `var(--${type.dataset.type})`));
 		background.style.backgroundImage = `linear-gradient(to right bottom, 
 		var(--${this._data.pokemon.type1}), 
 		var(--${this._data.pokemon.type2 ? this._data.pokemon.type2 : this._data.pokemon.type1}))`;
-		typeColor1.style.backgroundColor = `var(--${this._data.pokemon.type1})`;
-		typeColor2.style.backgroundColor = `var(--${this._data.pokemon.type2})`;
+	}
+
+	_effectivenessCalculate() {
+		for (const [key, value] of Object.entries(this._data.pokemon.weakness)) {
+			if (value === 4) this._quadruple.push(key);
+			if (value === 2) this._double.push(key);
+			if (value === 0.5) this._half.push(key);
+			if (value === 0.25) this._quarter.push(key);
+		}
 	}
 
 	_showData() {
@@ -41,7 +55,8 @@ class PokemonView extends View {
 			this._generateInfoMarkup() +
 			this._generateCalculatorHeader() +
 			this._generateCalculatorMain() +
-			this._generateCalculatorFooter();
+			this._generateCalculatorFooter() +
+			this._generateEffectiveness();
 		this._clear();
 		this._parentElement.insertAdjacentHTML("afterbegin", markup);
 	}
@@ -52,6 +67,7 @@ class PokemonView extends View {
 		this._data = data;
 		this._baseStats = this._data.pokemon.stats.map(stat => stat.base_stat);
 		this._allStats = calAllStats(this._IVs, this._baseStats, this._EVs, this._LV, this._nature);
+		this._effectivenessCalculate();
 
 		this._showData();
 		this._styleChange();
@@ -141,7 +157,7 @@ class PokemonView extends View {
 		return`
         <figure class="pokemon__fig">
             <svg class='icon--heart'>
-                <use xlink:href="${icons}#icon-heart${this._data.pokemon.bookmarked ? "" : '-outlined'}"></use>
+                <use href="${icons}#icon-heart${this._data.pokemon.bookmarked ? "" : '-outlined'}"></use>
             </svg>` 
 		+ this._generateButtonMarkup() + 
            `<img src="${this._data.pokemon.sprites ? this._data.pokemon.sprites:'./src/img/pokeball_bg.png'}" alt="Pokemon" class="pokemon__img" />
@@ -150,20 +166,22 @@ class PokemonView extends View {
             </h1>
         </figure>
         <div class="pokemon__details">
-            <div class="pokemon__details__type">
-                <span class="pokemon__details__type--1">${this._data.pokemon.type1}</span>
-                ${ this._data.pokemon.type2? `<span class="pokemon__details__type--2">${this._data.pokemon.type2}</span>`: `<div class='pokemon__details__type--2 hidden'></div>`}</span>
+            <div class="pokemon__details__types">
+                <span class="type" data-type="${this._data.pokemon.type1}">${this._data.pokemon.type1}</span>
+                ${ this._data.pokemon.type2 ? 
+					`<span class="type" data-type="${this._data.pokemon.type2}">${this._data.pokemon.type2}</span>`: 
+					`<div></div>`}</span>
             </div>
         <div class="pokemon__details__info">
             <div class="pokemon__details__info__ability">
-                <h2 class="heading--3">Ability</h2>
-                <h3 class="heading--2">${this._data.pokemon.ability1}</h3>	
-                <h3 class="heading--2">${ this._data.pokemon.ability2? this._data.pokemon.ability2 : `<div class='hidden'></div>`}</h3>	
+                <h3 class="heading--3">Ability</h2>
+                <h2 class="heading--2">${this._data.pokemon.ability1}</h3>	
+                <h2 class="heading--2">${ this._data.pokemon.ability2? this._data.pokemon.ability2 : `<div class='hidden'></div>`}</h3>	
             </div>
 
             <div class="pokemon__details__info__ability">
-                <h2 class="heading--3">Hidden Ability</h2>
-                <h3 class="heading--2">${this._data.pokemon.hiddenAbility !== null? this._data.pokemon.hiddenAbility: `<div>No Hidden Ability</div>`}</h3>	
+                <h3 class="heading--3">Hidden Ability</h2>
+                <h2 class="heading--2">${this._data.pokemon.hiddenAbility}</h3>	
             </div>
         </div>
         `;
@@ -246,6 +264,44 @@ class PokemonView extends View {
 				</tr>
 			</tbody>
 		</table>
+	</div>`;
+	}
+
+	_generateEffectiveness() {
+		const noWeakness = `<span class = "heading--3 type--none">No WEAKNESS</span>`;
+		const quadruple = this._quadruple
+			.map(type => `<span class="type" data-type="${type}">${type}</span>`)
+			.join("");
+		const double = this._double
+			.map(type => `<span class="type" data-type="${type}">${type}</span>`)
+			.join("");
+		const half = this._half
+			.map(type => `<span class="type" data-type="${type}">${type}</span>`)
+			.join("");
+		const quarter = this._quarter
+			.map(type => `<span class="type" data-type="${type}">${type}</span>`)
+			.join("");
+
+		// prettier-ignore
+		return `
+		<div class="pokemon__effectiveness">
+		<h2 class="heading--2">Weakness</h2>
+		<div class="pokemon__effectiveness__row">
+			<h3 class="heading--3">4X</h3>
+			<div class="pokemon__effectiveness__types">` + (this._quadruple.length !==0 ? quadruple : noWeakness)+
+			`</div>
+			<h3 class="heading--3">2X</h3>
+			<div class="pokemon__effectiveness__types">` + (this._double.length !==0 ? double : noWeakness) + 
+			`</div>
+		</div>
+		<div class="pokemon__effectiveness__row">
+			<h3 class="heading--3">0.5X</h3>
+			<div class="pokemon__effectiveness__types">` + (this._half.length !==0 ? half : noWeakness) +
+			`</div>
+			<h3 class="heading--3">0.25X</h3>
+			<div class="pokemon__effectiveness__types">` + (this._quarter.length !==0 ? quarter : noWeakness) +
+			`</div>
+		</div>
 	</div>`;
 	}
 }

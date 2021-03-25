@@ -1,5 +1,6 @@
 .pokemon {
 	background-color: $color-grey-light-1;
+	max-width: 80rem;
 
 	// FIGURE
 	&__fig {
@@ -41,12 +42,12 @@
 			width: 100%;
 			position: absolute;
 
-			&__prev{
+			&__prev {
 				position: absolute;
 				left: 0%;
 			}
 
-			&__next{
+			&__next {
 				position: absolute;
 				right: 0%;
 			}
@@ -89,7 +90,7 @@
 	&__details {
 		padding: 5.5rem 8rem 0 8rem;
 
-		&__type {
+		&__types {
 			font-size: 1.8rem;
 			font-weight: 800;
 			text-transform: uppercase;
@@ -97,22 +98,12 @@
 			justify-content: center;
 			align-items: center;
 
-			&--1 {
-				line-height: 4rem;
-				width: 12rem;
-				border-radius: 20px;
-
-				text-align: center;
-				background-color: var(--CoverBg_1);
-				color: white;
-			}
-			&--2 {
-				margin-left: 4.5rem;
+			.type {
+				margin: 0 2rem;
 				line-height: 4rem;
 				width: 12rem;
 				border-radius: 20px;
 				text-align: center;
-				background-color: var(--CoverBg_2);
 				color: white;
 			}
 		}
@@ -176,21 +167,47 @@
 		}
 	}
 
-	&__info-icon {
-		height: 2.35rem;
-		width: 2.35rem;
-		fill: $color-primary;
-		margin-right: 1.15rem;
-	}
-
-	&__info-data {
-		margin-right: 0.5rem;
-		font-weight: 700;
-	}
-
-	&__info-buttons {
+	&__effectiveness {
 		display: flex;
-		margin-left: 1.6rem;
-		transform: translateY(-1px);
+		justify-content: center;
+		width: 100%;
+		flex-wrap: wrap;
+		width: 100%;
+		margin: 0 auto;
+		padding: 2rem 0;
+
+		&__row{
+			width: 50%;
+			margin: 1.8rem 0;
+		}
+
+		.heading--2 {
+			display: block;
+			width: 100%;
+		}
+
+		&__types {
+			font-size: 1rem;
+			font-weight: 500;
+			text-transform: uppercase;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-wrap: wrap;
+			margin: 1rem 0;
+
+			.type {
+				margin: 1rem;
+				line-height: 3rem;
+				width: 7rem;
+				border-radius: 20px;
+				text-align: center;
+				color: white;
+
+				&--none{
+					margin: 1rem;
+				}
+			}
+		}
 	}
 }
