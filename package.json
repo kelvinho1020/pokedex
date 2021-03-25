@@ -3,11 +3,10 @@
 	"version": "1.0.0",
 	"description": "simple pokedex",
 	"default": "index.html",
-	"main": "index.js",
 	"type": "module",
 	"scripts": {
 		"start": "parcel index.html",
-		"build": "parcel build index.html"
+		"build": "parcel build index.html --out-dir ./dist"
 	},
 	"author": "Kelvin Ho",
 	"license": "ISC",
