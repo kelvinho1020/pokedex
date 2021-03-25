@@ -6,14 +6,13 @@ Pokedex is a small demo application built by JavaScript<br>
 
 ## DEMO
 https://pokedex-kelvinho.netlify.app
+<img src="https://user-images.githubusercontent.com/15214136/112501973-a5d15d00-8dc4-11eb-8c72-0651d2051adc.png" align="center" width="50%"><br>
 
 ## Searching
 Searching pokemon by pokemon's name or ID
-<img src="https://user-images.githubusercontent.com/15214136/112500569-75d58a00-8dc3-11eb-8914-7d39dc03c28c.PNG" width="21%"><br>
 
 ## Pokemon-stat-calculator
 Calculate pokemon stat by IV, EV, nature and level
-<img src="https://user-images.githubusercontent.com/15214136/112500577-7706b700-8dc3-11eb-826a-1817a76a2bbd.PNG" width="21%">
 
 ## Open API
 <img src="https://user-images.githubusercontent.com/24237865/83422649-d1b1d980-a464-11ea-8c91-a24fdf89cd6b.png" align="right" width="21%"/>
