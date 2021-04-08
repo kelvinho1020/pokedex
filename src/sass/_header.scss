@@ -23,7 +23,7 @@
 	span {
 		@media only screen and (max-width: $bp-small) {
 			display: none;
-      width: 5rem;
+			width: 5rem;
 		}
 	}
 
@@ -60,8 +60,14 @@
 		font-weight: 600;
 		font-family: inherit;
 
-    @media only screen and (max-width: $bp-small) {
+		@media only screen and (max-width: $bp-small) {
 			padding: 1rem;
+		}
+
+		& .search__icon {
+			@media only screen and (max-width: $bp-small) {
+				margin: 0;
+			}
 		}
 	}
 }
@@ -134,9 +140,10 @@
 	opacity: 0;
 	transition: all 0.5s 0.2s;
 
-  @media only screen and (max-width: $bp-small) {
-    width: 15rem;
-  }
+	@media only screen and (max-width: $bp-small) {
+		padding: 1.5rem;
+		width: 15rem;
+	}
 
 	&__list {
 		list-style: none;

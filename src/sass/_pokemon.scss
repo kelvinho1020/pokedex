@@ -135,6 +135,12 @@
 			border: none;
 			border-bottom: 1.5px solid $color-grey-light-3;
 			padding: 0 1rem;
+
+			@media only screen and (max-width: $bp-small) {
+				font-size: .5rem;
+				widtH: 10rem;
+			}
+		
 		}
 
 		span {

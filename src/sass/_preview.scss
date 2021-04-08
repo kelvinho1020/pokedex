@@ -2,6 +2,11 @@
 	overflow: hidden;
 	display: flex;
 
+	@media only screen and (max-width: $bp-small) {
+		margin: 0;
+		padding: 0;
+	}
+
 	&__link {
 		&:link,
 		&:visited {
@@ -15,7 +20,7 @@
 			background-color: #fff;
 
 			@media only screen and (max-width: $bp-small) {
-				padding: 1.5rem 0;
+				padding: 0;
 			}
 		}
 
@@ -133,6 +138,10 @@
 		position: absolute;
 		z-index: 100;
 		cursor: pointer;
+
+		@media only screen and (max-width: $bp-small) {
+			margin-right: 2rem;
+		}
 
 		svg {
 			height: 1.2rem;
