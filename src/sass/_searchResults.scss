@@ -1,31 +1,65 @@
 .search-results {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
+
+	@media only screen and (max-width: $bp-small) {
+		grid-row-start: 2;
+		grid-column-start: 1;
+		grid-column-end: 3;
+		overflow-x: scroll;
+	}
 }
 
 .results {
-  list-style: none;
-  margin-bottom: 2rem;
+	list-style: none;
+	margin-bottom: 2rem;
+
+	@media only screen and (max-width: $bp-small) {
+		display: flex;
+	}
 }
 
 .pagination {
-  margin: auto 0 3rem 0;
-  padding: 0 3.5rem;
+	margin: auto 0 3rem 0;
+	padding: 0 3.5rem;
 
-  &::after {
-    content: '';
-    display: table;
-    clear: both;
-  }
+	@media only screen and (max-width: $bp-small) {
+		position: absolute;
+		top: 11%;
+		width: 100%;
+	}
 
-  &__btn {
-    &--prev {
-      float: left;
-      background-color: $color-grey-light-2;
-    }
-    &--next {
-      float: right;
-      background-color: $color-grey-light-2;
-    }
-  }
+	&::after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+
+	&__btn {
+		&--prev {
+			float: left;
+			background-color: $color-grey-light-2;
+
+			@media only screen and (max-width: $bp-small) {
+				position: absolute;
+				left: 0;
+			}
+		}
+		&--next {
+			float: right;
+			background-color: $color-grey-light-2;
+
+			@media only screen and (max-width: $bp-small) {
+				position: absolute;
+				right: 0;
+			}
+			
+		}
+	}
+
+	span {
+		@media only screen and (max-width: $bp-small) {
+			display: none;
+		}
+	}
 }

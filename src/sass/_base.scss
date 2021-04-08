@@ -110,6 +110,9 @@ html {
 	@media only screen and (max-width: $bp-medium) {
 		font-size: 50%;
 	}
+	@media only screen and (max-width: $bp-small) {
+		font-size: 40%;
+	}
 }
 
 body {
@@ -118,18 +121,16 @@ body {
 	line-height: 1.6;
 	color: $color-grey-dark-1;
 	background-image: $gradient;
-	background-size: cover;
-	background-repeat: no-repeat;
-	min-height: calc(100vh - 2 * 4vw);
+	min-height: 100vh;
 }
 
 .container {
 	max-width: 120rem;
+	overflow: hidden;
 	min-height: 117rem;
-	margin: 4vw auto;
+	margin: 7rem auto;
 	background-color: #fff;
 	border-radius: 9px;
-	overflow: hidden;
 	box-shadow: 0 2rem 6rem 0.5rem rgba($color-grey-dark-1, 0.2);
 
 	display: grid;
@@ -137,12 +138,20 @@ body {
 	grid-template-columns: 1fr 2fr;
 	grid-template-areas:
 		"head head"
-		"list recipe";
+		"list pokemon";
 
 	@media only screen and (max-width: $bp-large) {
 		max-width: 100%;
 		margin: 0;
 		border-radius: 0;
+	}
+
+	@media only screen and (max-width: $bp-medium) {
+		grid-template-rows: 10rem 10rem minmax(100rem, auto);
+		grid-template-columns: 1fr;
+		grid-template-areas:
+			"head head"
+			"list pokemon";
 	}
 }
 
@@ -168,6 +177,6 @@ table {
 	td {
 		text-align: center;
 		padding: 0.3rem 0.3rem;
+
 	}
 }
-

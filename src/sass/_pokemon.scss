@@ -2,6 +2,12 @@
 	background-color: $color-grey-light-1;
 	max-width: 80rem;
 
+	@media only screen and (max-width: $bp-small) {
+		grid-column-start: 1;
+		max-width: 120rem;
+		min-width: 30rem;
+	}
+
 	// FIGURE
 	&__fig {
 		height: 32rem;
@@ -10,19 +16,6 @@
 		transform-origin: top;
 		border-radius: 0 0 40px 40px;
 		background-image: linear-gradient(to right bottom, var(--CoverBg_1), var(--CoverBg_2));
-
-		&::before {
-			content: "";
-			border-radius: 0 0 40px 40px;
-			display: block;
-			height: 100%;
-			width: 100%;
-			position: absolute;
-			top: 0;
-			left: 0;
-			opacity: 0.2;
-			background-color: white;
-		}
 
 		.icon--heart {
 			position: absolute;
@@ -126,10 +119,10 @@
 			border-bottom: 1.5px solid $color-grey-light-3;
 			outline: none;
 			color: inherit;
-
-			&::-webkit-inner-spin-button,
-			&::-webkit-outer-spin-button {
-				-webkit-appearance: none;
+			
+			@media only screen and (max-width: $bp-small) {
+				width: 5rem;
+				font-size: .5rem;
 			}
 		}
 
@@ -159,6 +152,10 @@
 			width: 15rem;
 			background: #dadada;
 
+			@media only screen and (max-width: $bp-smallest) {
+				display: none;
+			}
+
 			&__fill {
 				height: 100%;
 				border-radius: 5rem;
@@ -172,13 +169,16 @@
 		justify-content: center;
 		width: 100%;
 		flex-wrap: wrap;
-		width: 100%;
 		margin: 0 auto;
 		padding: 2rem 0;
 
-		&__row{
+		&__row {
 			width: 50%;
 			margin: 1.8rem 0;
+
+			@media only screen and (max-width: $bp-small) {
+				width: 150%;
+			}
 		}
 
 		.heading--2 {
@@ -204,7 +204,11 @@
 				text-align: center;
 				color: white;
 
-				&--none{
+				@media only screen and (max-width: $bp-small) {
+					width: 11rem;
+				}
+
+				&--none {
 					margin: 1rem;
 				}
 			}

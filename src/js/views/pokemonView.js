@@ -191,7 +191,7 @@ class PokemonView extends View {
 	_generateCalculatorHeader() {
 		return `<div class="pokemon__stats">
 		<table>
-		        <tbody>
+			<tbody>
 		            <tr class='pokemon__stats__header'>
 		                <th>Base</th>
 		                 <th></th>
@@ -265,23 +265,16 @@ class PokemonView extends View {
 				</tr>
 			</tbody>
 		</table>
-	</div>`;
+		</div>
+		`;
 	}
 
 	_generateEffectiveness() {
 		const noWeakness = `<span class = "heading--3 type--none">No effectiveness</span>`;
-		const quadruple = this._quadruple
-			.map(type => `<span class="type" data-type="${type}">${type}</span>`)
-			.join("");
-		const double = this._double
-			.map(type => `<span class="type" data-type="${type}">${type}</span>`)
-			.join("");
-		const half = this._half
-			.map(type => `<span class="type" data-type="${type}">${type}</span>`)
-			.join("");
-		const quarter = this._quarter
-			.map(type => `<span class="type" data-type="${type}">${type}</span>`)
-			.join("");
+		const quadruple = this._quadruple.map(type => `<span class="type" data-type="${type}">${type}</span>`).join("");
+		const double = this._double.map(type => `<span class="type" data-type="${type}">${type}</span>`).join("");
+		const half = this._half.map(type => `<span class="type" data-type="${type}">${type}</span>`).join("");
+		const quarter = this._quarter.map(type => `<span class="type" data-type="${type}">${type}</span>`).join("");
 
 		// prettier-ignore
 		return `
