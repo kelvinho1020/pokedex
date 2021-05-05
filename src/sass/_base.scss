@@ -126,7 +126,6 @@ body {
 
 .container {
 	max-width: 120rem;
-	overflow: hidden;
 	min-height: 117rem;
 	margin: 7rem auto;
 	background-color: #fff;
@@ -147,7 +146,8 @@ body {
 	}
 
 	@media only screen and (max-width: $bp-medium) {
-		grid-template-rows: 10rem 6rem minmax(100rem, auto);
+		overflow-x: hidden;
+		grid-template-rows: 10rem 6rem minmax(120rem, auto);
 		grid-template-columns: 1fr;
 		grid-template-areas:
 			"head head"

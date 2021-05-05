@@ -3,6 +3,10 @@
 	flex-direction: column;
 	position: relative;
 
+	@media only screen and (max-width: $bp-medium) {
+		min-width: 12rem;
+	}
+
 	@media only screen and (max-width: $bp-small) {
 		grid-row-start: 2;
 		grid-column-start: 1;
@@ -16,6 +20,8 @@
 	position: relative;
 
 	@media only screen and (max-width: $bp-small) {
+		margin: 0 3rem;
+		justify-content: space-between;
 		display: flex;
 	}
 }
@@ -28,12 +34,6 @@
 		position: absolute;
 		top: 20%;
 		width: 100%;
-	}
-
-	&::after {
-		content: "";
-		display: table;
-		clear: both;
 	}
 
 	&__btn {
@@ -58,7 +58,7 @@
 	}
 
 	span {
-		@media only screen and (max-width: $bp-small) {
+		@media only screen and (max-width: $bp-medium) {
 			display: none;
 		}
 	}

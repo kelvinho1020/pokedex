@@ -55,9 +55,7 @@ export const loadPokemon = async function (id) {
 		///// Bookmark /////
 		if (state.bookmarks.some(bookmark => bookmark.id === id)) state.pokemon.bookmarked = true;
 		else state.pokemon.bookmarked = false;
-
-		console.log(state.pokemon);
-		//console.log(data);
+		
 	} catch (err) {
 		throw err;
 	}

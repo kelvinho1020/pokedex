@@ -1,3 +1,5 @@
+import regeneratorRuntime from "regenerator-runtime";
+
 import * as model from "./model.js";
 import pokemonView from "./views/pokemonView.js";
 import searchView from "./views/searchView.js";

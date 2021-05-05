@@ -52,6 +52,10 @@
 		position: absolute;
 		left: 50%;
 		transform: translate(-50%);
+
+		@media only screen and (max-width: 400px) {
+			width: 70%;
+		}
 	}
 
 	&__name {
@@ -119,10 +123,10 @@
 			border-bottom: 1.5px solid $color-grey-light-3;
 			outline: none;
 			color: inherit;
-			
+
 			@media only screen and (max-width: $bp-small) {
 				width: 5rem;
-				font-size: .5rem;
+				font-size: 0.5rem;
 			}
 		}
 
@@ -137,10 +141,9 @@
 			padding: 0 1rem;
 
 			@media only screen and (max-width: $bp-small) {
-				font-size: .5rem;
-				widtH: 10rem;
+				font-size: 0.5rem;
+				width: 10rem;
 			}
-		
 		}
 
 		span {

@@ -90,9 +90,18 @@ class PokemonView extends View {
 		EV.forEach(ev => this._EVs.push(+ev.value));
 
 		///// Guard /////
-		if (this._IVs.some(iv => iv > 31 || iv < 0)) return this._resetStats();
-		if (this._EVs.some(ev => ev > 255 || ev < 0)) return this._resetStats();
-		if (this._LV > 100 || this._LV <= 0) return this._resetStats();
+		if (this._IVs.some(iv => iv > 31 || iv < 0)) {
+			alert("Please enter a IV below 31");
+			return;
+		}
+		if (this._EVs.some(ev => ev > 255 || ev < 0)) {
+			alert("Please enter a EV below 255");
+			return;
+		}
+		if (this._LV > 100 || this._LV <= 0) {
+			alert("Please enter a LV below 100");
+			return;
+		}
 
 		this._allStats = calAllStats(this._IVs, this._baseStats, this._EVs, this._LV, this._nature);
 		this._showData();

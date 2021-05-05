@@ -6,7 +6,6 @@ class ResultsView extends View {
 	_errorMessage = `We can't find that Pokemon! Please try other's name or ID!`;
 
 	_generateMarkup() {
-        console.log(this._data)
 		// prettier-ignore
 		return this._data
 			.map( data => `
