@@ -21,8 +21,8 @@
 
 	@media only screen and (max-width: $bp-small) {
 		margin: 0 3rem;
-		justify-content: space-between;
 		display: flex;
+		justify-content: flex-start;
 	}
 }
 

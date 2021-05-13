@@ -20,9 +20,9 @@
 			@media only screen and (max-width: 850px) {
 				justify-content: flex-start;
 			}
-			
+
 			@media only screen and (max-width: $bp-small) {
-				width: 20rem;
+				width: 6rem;
 				padding: 0;
 			}
 		}
@@ -58,6 +58,10 @@
 			background-image: url(../img/pokeball_bg.png), linear-gradient(to right bottom, $color-grad-1, $color-grad-2);
 			background-size: 100%;
 			opacity: 0.2;
+
+			@media only screen and (max-width: $bp-small) {
+				background-image: none;
+			}
 		}
 
 		img {
@@ -91,7 +95,7 @@
 	}
 
 	&__type {
-		font-size: 1.15rem;
+		font-size: 1rem;
 		color: $color-grey-dark-2;
 		text-transform: uppercase;
 		font-weight: 600;
@@ -124,10 +128,6 @@
 
 		margin-left: auto;
 		margin-right: 1.75rem;
-
-		@media only screen and (max-width: $bp-small) {
-			
-		}
 
 		svg {
 			height: 1.2rem;

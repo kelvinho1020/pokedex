@@ -139,6 +139,13 @@
 	visibility: hidden;
 	opacity: 0;
 	transition: all 0.5s 0.2s;
+	border-radius: 0 0 0 10px;
+
+	.preview:not(:first-of-type){
+		@media only screen and (max-width: $bp-small) {
+			margin-top: 2rem;
+		}
+	}
 
 	@media only screen and (max-width: 850px) {
 		width: 20rem;
@@ -166,5 +173,15 @@
 	.nav__btn--bookmarks:hover + & {
 		visibility: visible;
 		opacity: 1;
+	}
+
+	.preview__fig{
+		&::before {
+			background-image: url(../img/pokeball_bg.png), linear-gradient(to right bottom, $color-grad-1, $color-grad-2);
+		}
+
+		@media only screen and (max-width: $bp-small) {
+			margin-left: 2rem;
+		}
 	}
 }

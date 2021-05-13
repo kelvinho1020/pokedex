@@ -126,11 +126,12 @@ body {
 
 .container {
 	max-width: 120rem;
-	min-height: 117rem;
+
 	margin: 7rem auto;
 	background-color: #fff;
 	border-radius: 9px;
 	box-shadow: 0 2rem 6rem 0.5rem rgba($color-grey-dark-1, 0.2);
+	overflow: hidden;
 
 	display: grid;
 	grid-template-rows: 10rem minmax(100rem, auto);
