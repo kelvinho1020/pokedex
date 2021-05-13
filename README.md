@@ -1,6 +1,9 @@
 # pokedex
 Pokedex Application based on MVC architecture. With function of searching and bookmarking your favorite Pokemon.
 
+## Demo
+https://hyper-pokedex.netlify.app
+
 ## Features
 - Searching pokemon up to National Pokedex ID No.898
 - Bookmarking Pokemon
