@@ -147,6 +147,7 @@ body {
 	}
 
 	@media only screen and (max-width: $bp-medium) {
+		background-color: #f9f5f3;
 		overflow-x: hidden;
 		grid-template-rows: 10rem 6rem minmax(120rem, auto);
 		grid-template-columns: 1fr;

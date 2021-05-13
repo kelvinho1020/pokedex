@@ -185,19 +185,19 @@
 	}
 }
 
-.message{
+.message,
+.error {
 	max-width: 100rem;
 	margin: 0 auto;
 	padding: 5rem 4rem;
 	display: flex;
 	flex-wrap: wrap;
-	background-color: #fff;
-	padding-bottom: 120rem;
-
+	width: 40rem;
+	padding-top: 10rem;
+	
 	img {
-		margin-top: 10rem;
+		margin-top: 3rem;
 		width: 30rem;
-		position: absolute;
 	}
 
 	svg {
