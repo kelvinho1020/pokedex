@@ -87,6 +87,10 @@
 	&__details {
 		padding: 5.5rem 8rem 0 8rem;
 
+		@media only screen and (max-width: $bp-smallest) {
+			padding: 5.5rem 2rem 0 2rem;
+		}
+
 		&__types {
 			font-size: 1.8rem;
 			font-weight: 800;
@@ -162,7 +166,7 @@
 			background: #dadada;
 
 			@media only screen and (max-width: $bp-smallest) {
-				display: none;
+				width: 12rem;
 			}
 
 			&__fill {
